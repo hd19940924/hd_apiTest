@@ -1,0 +1,14 @@
+- name: 登录接口
+  url: http://example.com/api/login
+  method: POST
+  body:
+       username: user1
+       password: password1
+  variables:
+    - name: token
+      expression: $.token
+- name: 获取用户信息接口
+  url: http://example.com/api/user
+  method: GET
+  headers:
+  Authorization: "Bearer {{token}}"
